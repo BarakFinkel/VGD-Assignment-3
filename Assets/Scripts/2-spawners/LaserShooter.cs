@@ -28,4 +28,5 @@ public class LaserShooter: ClickSpawner {
 
         return newObject;
     }
+
 }
