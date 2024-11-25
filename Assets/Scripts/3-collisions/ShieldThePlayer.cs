@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ShieldThePlayer : MonoBehaviour {
     [Tooltip("The number of seconds that the shield remains active")] [SerializeField] float duration;

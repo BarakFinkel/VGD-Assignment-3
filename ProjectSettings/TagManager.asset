@@ -8,6 +8,9 @@ TagManager:
   - Laser
   - Wall
   - ToNextLevel
+  - Big Enemy
+  - HealthPack
+  - Double
   layers:
   - Default
   - TransparentFX

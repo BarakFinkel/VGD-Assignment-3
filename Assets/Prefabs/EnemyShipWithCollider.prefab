@@ -10,12 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7837289214103786376}
   - component: {fileID: 7837289214103786377}
-  - component: {fileID: 7837289214103786378}
   - component: {fileID: 3928880668046269437}
   - component: {fileID: 4202652755164059409}
+  - component: {fileID: 7837289214103786378}
   - component: {fileID: 3670066918551386316}
+  - component: {fileID: -4671289428456076261}
   m_Layer: 0
-  m_Name: EnemySaucerWithCollider
+  m_Name: EnemyShipWithCollider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,19 +92,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7837289214103786378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7837289214103786379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acc6f67fbb0751a4d92512ea05cbdf12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: {x: 0, y: -4, z: 0}
 --- !u!60 &3928880668046269437
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -134,7 +122,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -142,7 +130,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.6666667, y: 2.3030303}
+    oldSize: {x: 1.76, y: 1.52}
     newSize: {x: 1.36, y: 1.78}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -228,6 +216,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7837289214103786378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7837289214103786379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc6f67fbb0751a4d92512ea05cbdf12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: {x: 0, y: -4, z: 0}
 --- !u!114 &3670066918551386316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,3 +242,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 10
+--- !u!114 &-4671289428456076261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7837289214103786379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c90aae5cfb334f4fa968b005bb0f064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 1

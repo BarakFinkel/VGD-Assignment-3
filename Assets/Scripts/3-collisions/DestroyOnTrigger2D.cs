@@ -7,11 +7,11 @@ using UnityEngine;
  */
 public class DestroyOnTrigger2D : MonoBehaviour {
     [Tooltip("Every object tagged with this tag will trigger the destruction of this object")]
-    [SerializeField] string triggeringTag;
+    [SerializeField] List<string> collidingTags;
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == triggeringTag && enabled) {
-            Destroy(this.gameObject);
+        if (collidingTags.Contains(other.gameObject.tag)) {
+            Destroy(gameObject);
             Destroy(other.gameObject);
         }
     }

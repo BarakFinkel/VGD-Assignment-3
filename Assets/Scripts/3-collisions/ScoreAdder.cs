@@ -1,26 +1,37 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 /**
  * This component increases a given "score" field whenever it is triggered.
  */
 public class ScoreAdder : MonoBehaviour {
     [Tooltip("Every object tagged with this tag will trigger adding score to the score field.")]
-    [SerializeField] string triggeringTag;
-    [SerializeField] NumberField scoreField;
-    [SerializeField] int pointsToAdd;
+    [SerializeField] List<string> triggeringTags;
+    public GameObject player;
+    NumberField scoreField;
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == triggeringTag && scoreField!=null) {
-            scoreField.AddNumber(pointsToAdd);
+    void Start()
+    {
+        scoreField = GetComponent<NumberField>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (triggeringTags.Contains(other.gameObject.tag)) {
+            
+            ScoreHolder enemyScorer = other.gameObject.GetComponent<ScoreHolder>();
+            int addedPoints = enemyScorer.GetPoints();
+            
+            DoublePoints dp = player.GetComponent<DoublePoints>();
+
+            if(dp!= null && dp.IsDouble())
+            {
+                Debug.Log("Double up!");
+                addedPoints *= 2;
+            }
+
+            scoreField.AddNumber(addedPoints);
         }
-    }
-
-    public ScoreAdder SetScoreField(NumberField newTextField) {
-        this.scoreField = newTextField;
-        return this;
-    }
-    public ScoreAdder SetPointsToAdd(int newPointsToAdd) {
-        this.pointsToAdd = newPointsToAdd;
-        return this;
     }
 }
