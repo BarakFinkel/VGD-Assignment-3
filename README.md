@@ -27,13 +27,13 @@ This assignment furtherly enhances the previous project.
 
    - After rescaling, map bounds were added to prevent moving out of the game map and various enemy spawners were placed according to the new map scale.
   
-- **Enemy and Projectile Lifetime**
+- **Enemy and Projectile Lifetime** -
   For optimization purposes, both lazers and enemies were assigned with the new [LifeTime.cs](https://github.com/BarakFinkel/VGD-Assignment-3/blob/master/Assets/Scripts/2-spawners/LifeTime.cs) script in order to destroy objects in a customizable time period from creation, thus preventing further usage of irrelevant data.
  
-- **Original Change - Points Multiplier**
+- **Original Change - Points Multiplier** -
   The x2 Multiplier was added to enhance the points obtainment for a limited period of time from activation.
 
-  - The x2 Pack is dropped in the same manner as of the Health Pack, also utilizing the [SpawnerAroundPlayer.cs](https://github.com/BarakFinkel/VGD-Assignment-3/blob/master/Assets/Scripts/2-spawners/SpawnerAroundPlayer.cs) script.
+  - The x2 Pack is dropped in the same manner as of the Health Pack, utilizing the [SpawnerAroundPlayer.cs](https://github.com/BarakFinkel/VGD-Assignment-3/blob/master/Assets/Scripts/2-spawners/SpawnerAroundPlayer.cs) script.
   - The [DoublePoints.cs](https://github.com/BarakFinkel/VGD-Assignment-3/blob/master/Assets/Scripts/3-collisions/DoublePoints.cs) script handles activation of the package by triggerment and lighting of a flag, indicated by a UI text shown in the top side of the screen.
     It is then invoking a function to disable the said flag in a customizable time interval.
   - The flag is then checked by the projectiles shot by the player for determining the amount of added points via their [ScoreAdder.cs](https://github.com/BarakFinkel/VGD-Assignment-3/blob/master/Assets/Scripts/3-collisions/ScoreAdder.cs).
