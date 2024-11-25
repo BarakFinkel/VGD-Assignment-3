@@ -44,7 +44,7 @@ Programming:
 * Barak Finkel
 
 Graphics:
-* [New Assets](​https://www.gamedevmarket.net/asset/2d-space-shooter-pack-2-0)
+* [New Assets](https://www.gamedevmarket.net/asset/2d-space-shooter-pack-2-0)
 
 ## Original Credits
 
