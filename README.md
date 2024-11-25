@@ -19,7 +19,7 @@ This assignment furtherly enhances the previous project.
     [GameOverOnCollision.cs](https://github.com/BarakFinkel/VGD-Assignment-3/blob/master/Assets/Scripts/4-levels/GameOverOnCollision2D.cs) also handles hits done by enemy units to reduce the player's HP.
     
   - A health pack prefab was added in order to let the player heal every customizable period of time. Triggring with the pack executes the healing function accordingly.
-    In addition, the [SpawnerAroundPlayer.cs](https://github.com/BarakFinkel/VGD-Assignment-3/blob/master/Assets/Scripts/2-spawners/SpawnerAroundPlayer.cs) inheriting from [TimedSpawnerRandom.cs](https://github.com/BarakFinkel/VGD-Assignment-3/blob/master/Assets/Scripts/2-spawners/TimedSpawnerRandom.cs.meta) in order to create a capsular spawning zone around the player for the said health packs.
+    In addition, the [SpawnerAroundPlayer.cs](https://github.com/BarakFinkel/VGD-Assignment-3/blob/master/Assets/Scripts/2-spawners/SpawnerAroundPlayer.cs) was added, inheriting from [TimedSpawnerRandom.cs](https://github.com/BarakFinkel/VGD-Assignment-3/blob/master/Assets/Scripts/2-spawners/TimedSpawnerRandom.cs.meta) in order to create a capsular spawning zone around the player for the said health packs.
 
  - **Map Resizing and Bounding**
    - The map was scaled to be bigger horizontally in order for further movement of the player.
