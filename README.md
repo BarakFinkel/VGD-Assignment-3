@@ -1,31 +1,52 @@
-# Unity week 2: Formal elements
+# Unity Assignment 3:
+This assignment furtherly enhances the previous project.
 
-A project with step-by-step scenes illustrating some of the formal elements of game development in Unity, including: 
+[Itch.io link](https://shutafimpro.itch.io/space-panic)
 
-* Prefabs for instantiating new objects;
-* Colliders for triggering outcomes of actions;
-* Coroutines for setting time-based rules.
+## Main Changes:
 
-Text explanations are available 
-[here](https://github.com/gamedev-at-ariel/gamedev-5782) in folder 04.
+- **Score Counter UI and Technical Changes**:
+  - Now displayed in the UI layer, rather than below the player.
+  - Now counted by modifying the [ScoreAdder.cs](https://github.com/BarakFinkel/VGD-Assignment-3/blob/master/Assets/Scripts/3-collisions/ScoreAdder.cs) to work with a new script [ScoreHolder.cs](https://github.com/BarakFinkel/VGD-Assignment-3/blob/master/Assets/Scripts/3-collisions/ScoreHolder.cs) script to each and every enemy spawned,
+    adding easily customizable reward points for defeating different enemy types - done via the enemy prefabs within the inspector.
+    This is demonstrated by adding a new "Big Enemy" tag and corresponding prefab, whose defeat adds more points.
 
-## Cloning
-To clone the project, you may need to install git lfs first (if it is not already installed):
+- **Added Healthpoints**
+  - The player now has 3 Health-Points shown by the UI in the form of an emptying heart icon.
+    This mechanic was implemented by adding the [HealthPoints.cs](https://github.com/BarakFinkel/VGD-Assignment-3/blob/master/Assets/Scripts/3-collisions/HealthPoints.cs) script.
+    
+  - Using this script, the [GameOverOnCollision.cs](https://github.com/BarakFinkel/VGD-Assignment-3/blob/master/Assets/Scripts/4-levels/GameOverOnCollision2D.cs) script was modified from the original GameOverOnTrigger.cs script to handle collisions instead of triggers, and only kill the player after reaching 0 HP.
+    [GameOverOnCollision.cs](https://github.com/BarakFinkel/VGD-Assignment-3/blob/master/Assets/Scripts/4-levels/GameOverOnCollision2D.cs) also handles hits done by enemy units to reduce the player's HP.
+    
+  - A health pack prefab was added in order to let the player heal every customizable period of time. Triggring with the pack executes the healing function accordingly.
+    In addition, the [SpawnerAroundPlayer.cs](https://github.com/BarakFinkel/VGD-Assignment-3/blob/master/Assets/Scripts/2-spawners/SpawnerAroundPlayer.cs) was added, inheriting from [TimedSpawnerRandom.cs](https://github.com/BarakFinkel/VGD-Assignment-3/blob/master/Assets/Scripts/2-spawners/TimedSpawnerRandom.cs.meta) in order to create a capsular spawning zone around the player for the said health packs.
 
-    git lfs install 
+ - **Map Resizing and Bounding**
+   - The map was scaled to be bigger horizontally in order for further movement of the player.
+     This change requires also adding a Cinemachine camera for following the player.
 
-To clone faster, you can limit the depth to 1 like this:
+   - After rescaling, map bounds were added to prevent moving out of the game map and various enemy spawners were placed according to the new map scale.
+  
+- **Enemy and Projectile Lifetime** -
+  For optimization purposes, both lazers and enemies were assigned with the new [LifeTime.cs](https://github.com/BarakFinkel/VGD-Assignment-3/blob/master/Assets/Scripts/2-spawners/LifeTime.cs) script in order to destroy objects in a customizable time period from creation, thus preventing further usage of irrelevant data.
+ 
+- **Original Change - Points Multiplier** -
+  The x2 Multiplier was added to enhance the points obtainment for a limited period of time from activation.
 
-    git clone --depth=1 https://github.com/<repository-name>.git
+  - The x2 Pack is dropped in the same manner as of the Health Pack, utilizing the [SpawnerAroundPlayer.cs](https://github.com/BarakFinkel/VGD-Assignment-3/blob/master/Assets/Scripts/2-spawners/SpawnerAroundPlayer.cs) script.
+  - The [DoublePoints.cs](https://github.com/BarakFinkel/VGD-Assignment-3/blob/master/Assets/Scripts/3-collisions/DoublePoints.cs) script handles activation of the package by triggerment and lighting of a flag, indicated by a UI text shown in the top side of the screen.
+    It is then invoking a function to disable the said flag in a customizable time interval.
+  - The flag is then checked by the projectiles shot by the player for determining the amount of added points via their [ScoreAdder.cs](https://github.com/BarakFinkel/VGD-Assignment-3/blob/master/Assets/Scripts/3-collisions/ScoreAdder.cs).
 
-When you first open this project, you may not see the text in the score field.
-This is because `TextMeshPro` is not in the project.
-The Unity Editor should hopefully prompt you to import TextMeshPro;
-once you do this, re-open the scenes, and you should be able to see the texts.
+## New Version Credits
 
+Programming:
+* Barak Finkel
 
+Graphics:
+* [New Assets](https://www.gamedevmarket.net/asset/2d-space-shooter-pack-2-0)
 
-## Credits
+## Original Credits
 
 Programming:
 * Maoz Grossman
