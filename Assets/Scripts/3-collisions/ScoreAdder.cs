@@ -25,7 +25,7 @@ public class ScoreAdder : MonoBehaviour {
             
             DoublePoints dp = player.GetComponent<DoublePoints>();
 
-            if(dp!= null && dp.IsDouble())
+            if(dp != null && dp.IsDouble())
             {
                 Debug.Log("Double up!");
                 addedPoints *= 2;

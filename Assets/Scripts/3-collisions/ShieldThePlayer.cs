@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/**
+ * This component increases a given "score" field whenever it is triggered.
+ */
 public class ShieldThePlayer : MonoBehaviour 
 {
     [Tooltip("The number of seconds that the shield remains active")]
