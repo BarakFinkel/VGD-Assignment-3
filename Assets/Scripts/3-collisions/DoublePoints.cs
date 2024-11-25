@@ -5,11 +5,15 @@ public class DoublePoints: MonoBehaviour {
 
     bool doubleUp = false;
     [SerializeField] float doubleDuration = 5.0f;
-    [SerializeField] TMP_Text doubleText;
+    TMP_Text doubleText;
 
     void Start()
     {
-        doubleText.enabled = false;
+        doubleText = GameObject.Find("DoubleP").GetComponent<TMP_Text>();
+        if(CompareTag("Player"))
+        {
+            doubleText.enabled = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
