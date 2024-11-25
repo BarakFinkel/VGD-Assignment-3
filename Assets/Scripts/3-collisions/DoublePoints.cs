@@ -1,8 +1,8 @@
 using TMPro;
 using UnityEngine;
 
-public class DoublePoints: MonoBehaviour {
-
+public class DoublePoints : MonoBehaviour
+{
     bool doubleUp = false;
     [SerializeField] float doubleDuration = 5.0f;
     TMP_Text doubleText;
@@ -10,21 +10,21 @@ public class DoublePoints: MonoBehaviour {
     void Start()
     {
         doubleText = GameObject.Find("DoubleP").GetComponent<TMP_Text>();
-        if(CompareTag("Player"))
+        if (CompareTag("Player"))
         {
             doubleText.enabled = false;
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) 
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(CompareTag("Player") && other.gameObject.CompareTag("Double"))
+        if (CompareTag("Player") && other.gameObject.CompareTag("Double"))
         {
             Destroy(other.gameObject);
             TurnOnDouble();
         }
     }
-    
+
     public bool IsDouble()
     {
         return doubleUp;

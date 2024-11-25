@@ -1,9 +1,10 @@
 using UnityEngine;
 
 /**
- * This component increases a given "score" field whenever it is triggered.
+ * This component helps set the score points an enemy is worth.
  */
-public class ScoreHolder : MonoBehaviour {
+public class ScoreHolder : MonoBehaviour
+{
     [SerializeField] int points = 1;
 
     public int GetPoints()

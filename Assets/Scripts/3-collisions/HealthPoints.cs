@@ -1,4 +1,3 @@
-
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,7 +15,7 @@ public class HealthPoints : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("HealthPack"))
+        if (other.CompareTag("HealthPack"))
         {
             Destroy(other.gameObject);
             Heal();
@@ -30,7 +29,7 @@ public class HealthPoints : MonoBehaviour
 
     public void Hit()
     {
-        if(hp > 0) 
+        if (hp > 0) 
         {
             hp--;
         }
@@ -39,7 +38,7 @@ public class HealthPoints : MonoBehaviour
 
     public void Heal()
     {
-        if(hp < 3) 
+        if (hp < 3) 
         {
             hp++;
         }
