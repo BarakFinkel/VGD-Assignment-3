@@ -2476,7 +2476,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -6082692073046699861, guid: e900ab782bc586944ad55e965043452d,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2680,8 +2680,8 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 1513853355763840031, guid: 62d3d8661606fa441b16b64c4931c7c7,
     type: 3}
   velocityOfSpawnedObject: {x: 0, y: -1, z: 0}
-  minTimeBetweenSpawns: 5
-  maxTimeBetweenSpawns: 10
+  minTimeBetweenSpawns: 10
+  maxTimeBetweenSpawns: 20
   maxXDistance: 0
   parentOfAllInstances: {fileID: 0}
   spawnRadius: 8
@@ -2700,7 +2700,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doubleDuration: 5
-  doubleText: {fileID: 666256021}
 --- !u!95 &7343668302224742965
 Animator:
   serializedVersion: 7
