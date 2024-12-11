@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 /**
  * This component increases a given "score" field whenever it is triggered.
  */
-public class ScoreAdder : MonoBehaviour {
+public class ScoreAdder : MonoBehaviour
+{
     [Tooltip("Every object tagged with this tag will trigger adding score to the score field.")]
     [SerializeField] List<string> triggeringTags;
     public GameObject player;
@@ -18,11 +18,10 @@ public class ScoreAdder : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (triggeringTags.Contains(other.gameObject.tag)) {
-            
+        if (triggeringTags.Contains(other.gameObject.tag))
+        {
             ScoreHolder enemyScorer = other.gameObject.GetComponent<ScoreHolder>();
             int addedPoints = enemyScorer.GetPoints();
-            
             DoublePoints dp = player.GetComponent<DoublePoints>();
 
             if(dp != null && dp.IsDouble())

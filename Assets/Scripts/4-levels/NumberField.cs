@@ -5,9 +5,8 @@ using UnityEngine;
  * This component should be attached to a TextMeshPro object.
  * It allows to feed an integer number to the text field.
  */
-
-public class NumberField : MonoBehaviour {
-
+public class NumberField : MonoBehaviour
+{
     TMP_Text score;
     int score_num;
 
@@ -18,12 +17,14 @@ public class NumberField : MonoBehaviour {
         score_num = int.Parse(score.text);
     }
 
-    public void SetNumber(int newNumber) {
+    public void SetNumber(int newNumber)
+    {
         score_num = newNumber;
         score.text = newNumber.ToString();
     }
 
-    public void AddNumber(int toAdd) {
+    public void AddNumber(int toAdd)
+    {
         SetNumber(score_num + toAdd);
     }
 }

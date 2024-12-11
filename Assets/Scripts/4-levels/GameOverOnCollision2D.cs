@@ -4,11 +4,15 @@ using UnityEngine.SceneManagement;
 
 public class GameOverOnCollision2D : MonoBehaviour
 {
-    [Tooltip("Every object tagged with this tag will make the game be over")]
-    [SerializeField] List<string> collidingTags;
-    [SerializeField] string gameOverScene = "Level-game-over";
-    [SerializeField] float delay = 0.2f;
-    
+    [Tooltip("Every object tagged with this tag will damage the player on collision.")]
+    [SerializeField]
+    List<string> collidingTags;
+
+    [SerializeField]
+    string gameOverScene = "Level-game-over";
+
+    [SerializeField]
+    float delay = 0.2f;
 
     HealthPoints hp;
     InputMover playerMover;
@@ -32,7 +36,7 @@ public class GameOverOnCollision2D : MonoBehaviour
             hp.Hit();
         }
 
-        if(hp.GetHP() == 0)
+        if (hp.GetHP() == 0)
         {
             Debug.Log("Game over!");
 
@@ -51,7 +55,8 @@ public class GameOverOnCollision2D : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void Update() {
+    private void Update()
+    {
         /* Just to show the enabled checkbox in Editor */
     }
 }

@@ -5,7 +5,8 @@ using UnityEngine;
  */
 public class ScoreHolder : MonoBehaviour
 {
-    [SerializeField] int points = 1;
+    [SerializeField]
+    int points = 1;
 
     public int GetPoints()
     {

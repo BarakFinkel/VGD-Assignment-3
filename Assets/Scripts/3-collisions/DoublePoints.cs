@@ -4,7 +4,10 @@ using UnityEngine;
 public class DoublePoints : MonoBehaviour
 {
     bool doubleUp = false;
-    [SerializeField] float doubleDuration = 5.0f;
+    
+    [SerializeField] 
+    float doubleDuration = 5.0f;
+
     TMP_Text doubleText;
 
     void Start()
@@ -34,7 +37,6 @@ public class DoublePoints : MonoBehaviour
     {
         doubleUp = true;
         doubleText.enabled = true;
-
         Invoke(nameof(TurnOffDouble), doubleDuration);
     }
 
