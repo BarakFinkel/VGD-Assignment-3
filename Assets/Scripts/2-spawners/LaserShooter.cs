@@ -12,7 +12,7 @@ public class LaserShooter : ClickSpawner
         // Assign a player reference to the ScoreAdder component.
         ScoreAdder scoreAdder = newObject.GetComponent<ScoreAdder>();
 
-        if (scoreAdder != null) 
+        if (scoreAdder != null)
         {
             scoreAdder.player = gameObject; // Assign the Player reference
         }

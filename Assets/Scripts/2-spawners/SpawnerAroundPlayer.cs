@@ -37,7 +37,7 @@ public class SpawnerAroundPlayer : TimedSpawnerRandom
             Vector3 positionOfSpawnedObject = new Vector3(
                 transform.position.x + xOffset,
                 transform.position.y + yOffset,
-                transform.position.z  
+                transform.position.z
             );
 
             // Instantiate and set up the spawned object as before

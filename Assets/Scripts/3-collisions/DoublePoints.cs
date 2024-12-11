@@ -5,7 +5,7 @@ public class DoublePoints : MonoBehaviour
 {
     bool doubleUp = false;
 
-    [SerializeField] 
+    [SerializeField]
     float doubleDuration = 5.0f;
 
     TMP_Text doubleText;
