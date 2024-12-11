@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class HealthPoints : MonoBehaviour
 {
-    int hp = 3; // Intetionally chosen as 3 within the code as it represents the static and non-customizable number of the player's health points.
+    int hp = 3; // Intentionally chosen as 3 within the code as it represents the static and non-customizable number of the player's health points.
     [SerializeField] Image hp_image;
     [SerializeField] List<Sprite> hp_types;
 
@@ -33,17 +33,17 @@ public class HealthPoints : MonoBehaviour
         {
             hp--;
         }
-        
+
         spriteChange();
     }
 
     public void Heal()
     {
-        if (hp < 3) 
+        if (hp < 3)
         {
             hp++;
         }
-        
+
         spriteChange();
     }
 

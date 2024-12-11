@@ -11,9 +11,9 @@ public class DestroyOnTrigger2D : MonoBehaviour
     [SerializeField]
     List<string> collidingTags;
 
-    private void OnTriggerEnter2D(Collider2D other) 
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collidingTags.Contains(other.gameObject.tag)) 
+        if (collidingTags.Contains(other.gameObject.tag))
         {
             Destroy(gameObject);
             Destroy(other.gameObject);

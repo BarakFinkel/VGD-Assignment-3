@@ -3,11 +3,16 @@
 /**
  * This component spawns the given object at fixed time-intervals at its object position.
  */
-public class TimedSpawner: MonoBehaviour 
+public class TimedSpawner : MonoBehaviour
 {
-    [SerializeField] Mover prefabToSpawn;
-    [SerializeField] Vector3 velocityOfSpawnedObject;
-    [SerializeField] float secondsBetweenSpawns = 1f;
+    [SerializeField]
+    Mover prefabToSpawn;
+
+    [SerializeField]
+    Vector3 velocityOfSpawnedObject;
+
+    [SerializeField]
+    float secondsBetweenSpawns = 1f;
 
     void Start()
     {

@@ -4,18 +4,18 @@ using UnityEngine.InputSystem;
 /**
  * This component spawns the given object whenever the player clicks a given key.
  */
-public class ClickSpawner: MonoBehaviour
+public class ClickSpawner : MonoBehaviour
 {
-    [SerializeField] 
+    [SerializeField]
     protected InputAction spawnAction = new InputAction(type: InputActionType.Button);
-    
-    [SerializeField] 
+
+    [SerializeField]
     protected GameObject prefabToSpawn;
-    
-    [SerializeField] 
+
+    [SerializeField]
     protected Vector3 velocityOfSpawnedObject;
-    
-    [SerializeField] 
+
+    [SerializeField]
     protected float offset = 1.1f;
 
     void OnEnable()
@@ -30,16 +30,16 @@ public class ClickSpawner: MonoBehaviour
 
     protected virtual GameObject spawnObject()
     {
-        //Debug.Log("Spawning a new object");
+        // Debug.Log("Spawning a new object");
 
         // Step 1: spawn the new object.
-        Vector3 positionOfSpawnedObject = transform.position + new Vector3(0,offset,0);  // span at the containing object position.
+        Vector3 positionOfSpawnedObject = transform.position + new Vector3(0, offset, 0);  // span at the containing object position.
         Quaternion rotationOfSpawnedObject = Quaternion.identity;  // no rotation.
         GameObject newObject = Instantiate(prefabToSpawn, positionOfSpawnedObject, rotationOfSpawnedObject);
 
         // Step 2: modify the velocity of the new object.
         Mover newObjectMover = newObject.GetComponent<Mover>();
-        
+
         if (newObjectMover)
         {
             newObjectMover.SetVelocity(velocityOfSpawnedObject);
@@ -47,7 +47,7 @@ public class ClickSpawner: MonoBehaviour
 
         return newObject;
     }
-    
+
     private void Update()
     {
         if (spawnAction.WasPressedThisFrame())

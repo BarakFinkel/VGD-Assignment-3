@@ -22,7 +22,7 @@ public class GameOverOnCollision2D : MonoBehaviour
 
     void Start()
     {
-        hp = GetComponent<HealthPoints>(); 
+        hp = GetComponent<HealthPoints>();
         playerMover = GetComponent<InputMover>();
         playerCollider = GetComponent<Collider2D>();
         playerRB = GetComponent<Rigidbody2D>();
@@ -31,7 +31,7 @@ public class GameOverOnCollision2D : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (collidingTags.Contains(other.gameObject.tag)) 
+        if (collidingTags.Contains(other.gameObject.tag))
         {
             hp.Hit();
         }

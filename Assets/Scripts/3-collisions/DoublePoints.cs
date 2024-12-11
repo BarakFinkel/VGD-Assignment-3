@@ -4,7 +4,7 @@ using UnityEngine;
 public class DoublePoints : MonoBehaviour
 {
     bool doubleUp = false;
-    
+
     [SerializeField] 
     float doubleDuration = 5.0f;
 

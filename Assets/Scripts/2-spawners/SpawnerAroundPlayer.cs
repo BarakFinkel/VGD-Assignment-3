@@ -21,7 +21,7 @@ public class SpawnerAroundPlayer : TimedSpawnerRandom
         {
             float timeBetweenSpawnsInSeconds = Random.Range(minTimeBetweenSpawns, maxTimeBetweenSpawns);
             await Awaitable.WaitForSecondsAsync(timeBetweenSpawnsInSeconds);  // co-routines
-            
+
             if (!this)
             {
                 break;  // might be destroyed when moving to a new scene

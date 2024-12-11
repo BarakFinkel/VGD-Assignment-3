@@ -4,14 +4,16 @@ using UnityEngine.InputSystem;
 /**
  * This component moves its object when the player clicks the arrow keys.
  */
-public class InputMover: MonoBehaviour
+public class InputMover : MonoBehaviour
 {
     [Tooltip("Speed of movement, in meters per second")]
     [SerializeField]
     float speed = 10f;
 
-    [SerializeField] 
-    InputAction move = new InputAction(type: InputActionType.Value, expectedControlType: nameof(Vector2));
+    [SerializeField]
+    InputAction move = new InputAction(
+        type: InputActionType.Value, expectedControlType: nameof(Vector2)
+    );
 
     void OnEnable()
     {
@@ -31,7 +33,7 @@ public class InputMover: MonoBehaviour
         //transform.Translate(movementVector);
         // NOTE: "Translate(movementVector)" uses relative coordinates - 
         //       it moves the object in the coordinate system of the object itself.
-        // In contrast, "transform.position += movementVector" would use absolute coordinates -
+        // In contrast, "transform.position += movementVector" would use absolute coordinates - 
         //       it moves the object in the coordinate system of the world.
         // It makes a difference only if the object is rotated.
     }

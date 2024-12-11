@@ -1,8 +1,8 @@
 using UnityEngine;
 
 public class LifeTime : MonoBehaviour
-{    
-    [Tooltip("Time length of object's existence")]    
+{
+    [Tooltip("Time length of object's existence")]
     [SerializeField]
     float lifeTime = 1.0f;
 
